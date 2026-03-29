@@ -1,48 +1,106 @@
-# TicTacToe em Java
+# ♟️ Tic-Tac-Toe in Java
 
-## Visão Geral
+A classic Tic-Tac-Toe console game built in Java, featuring Object-Oriented Programming principles and three distinct AI difficulty levels.
 
-Este projeto em Java implementa um clássico jogo da velha utilizando os princípios da Programação Orientada a Objetos (OOP). O jogo oferece três diferentes níveis de dificuldade, permitindo que os jogadores desafiem um oponente controlado pelo computador. Além disso, o jogo suporta partidas entre humano e computador.
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
+![OOP](https://img.shields.io/badge/Paradigm-OOP-blue?style=flat)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat)
 
-## Recursos
+---
 
-- **Design Orientado a Objetos:** O projeto é estruturado utilizando os princípios da OOP, proporcionando um design claro e modular.
+## 🎮 About the Game
 
-- **Três Níveis de Dificuldade:**
-  - Fácil: O computador joga no primeiro espaço vazio disponível.
-  - Médio: O computador joga em um espaço vazio aleatório.
-  - Difícil: O computador joga formando um "triângulo" no tabuleiro.
+This project implements the classic Tic-Tac-Toe game where a human player competes against a computer opponent. The game was developed as an academic project to demonstrate Object-Oriented Programming concepts such as interfaces, abstract classes, inheritance, and encapsulation.
 
-- **Partidas entre Humano e Computador:** Desfrute da experiência clássica do jogo da velha contra um oponente de computador inteligente.
+---
 
-## Como Jogar
+## ✨ Features
 
-1. **Clone o repositório em sua máquina local:**
+- **3 AI Difficulty Levels:**
+  - 🟢 **Easy** — Computer plays on the first available empty space
+  - 🟡 **Medium** — Computer plays on a random empty space
+  - 🔴 **Hard** — Computer plays strategically forming a triangle pattern on the board
+- **Human vs Computer** gameplay
+- **Clean OOP design** with interfaces and abstract classes
+- **Console-based UI** with clear board display
 
-   ```bash
-   git clone https://github.com/your-username/tic-tac-toe-java.git
+---
 
-2. **Siga as instruções na tela para escolher o modo de jogo (Humano vs. Computador) e o nível de dificuldade.**
+## 🏗️ Project Architecture
 
-Divirta-se jogando o jogo da velha!
+The project follows a clean OOP structure:
 
-## Estrutura do Projeto
-O projeto está organizado da seguinte forma:
+| Class / Interface | Type | Description |
+|---|---|---|
+| `IPlayer` | Interface | Defines common methods for all player types |
+| `IReadableTable` | Interface | Represents the game board contract |
+| `AbstractComputerPlayer` | Abstract Class | Shared logic for all computer players |
+| `HumanPlayer` | Class | Implements the human player |
+| `SimplePlayer` | Class | Easy AI — first available space |
+| `SimplePlayer2` | Class | Medium AI — random available space |
+| `SimplePlayer3` | Class | Hard AI — strategic triangle pattern |
+| `Table` | Class | Game board logic and state |
+| `Position` | Class | Stores board positions |
+| `PIECE` | Enum | Defines X and O piece constants |
+| `Main` | Class | Entry point and game flow controller |
 
-- AbstractComputerPlayer.java: Esta classe abstrata contém funcionalidades comuns para todos os três níveis de jogador computador, armazenando os valores das peças do jogador.
-- HumanPlayer.java: Subclasse de IPlayer, implementa o jogador humano.
-- IPlayer.java: Interface que define métodos comuns para jogadores (humanos e computadores).
-- IReadableTable.java: Interface que representa o tabuleiro.
-- Main.java: Classe principal que inicia o jogo e gerencia as interações do usuário.
-- PIECE.java: Enumeração que armazena os valores constantes das peças (X ou O).
-- Position.java: Classe para armazenar as posições.
-- SimplePlayer.java: Primeiro nível de jogador computador, coloca suas peças no primeiro espaço vazio disponível.
-- SimplePlayer2.java: Segundo nível de jogador computador, coloca suas peças em um espaço vazio aleatório.
-- SimplePlayer3.java: Terceiro nível de jogador computador, faz suas jogadas formando um "triângulo" no tabuleiro.
-- Table.java: Classe que representa o tabuleiro do jogo.
+---
 
-## Contribuições
-Se encontrar algum problema ou tiver sugestões de melhoria, sinta-se à vontade para abrir uma issue ou enviar uma pull request.
+## 📁 Project Structure
+```
+TicTacToe/
+├── src/ft/tictactoe/
+│   ├── Main.java
+│   ├── IPlayer.java
+│   ├── IReadableTable.java
+│   ├── AbstractComputerPlayer.java
+│   ├── HumanPlayer.java
+│   ├── SimplePlayer.java
+│   ├── SimplePlayer2.java
+│   ├── SimplePlayer3.java
+│   ├── Table.java
+│   ├── Position.java
+│   └── PIECE.java
+└── README.md
+```
 
-## Licença
-Este projeto está licenciado sob a Licença MIT - consulte o arquivo LICENSE para obter detalhes.
+---
+
+## ▶️ How to Run
+
+### Prerequisites
+- Java JDK 8 or higher installed
+- Any Java IDE (IntelliJ IDEA, Eclipse, NetBeans) or terminal
+
+### Running from terminal
+```bash
+# Clone the repository
+git clone https://github.com/fertms/TicTacToe.git
+cd TicTacToe
+
+# Compile
+javac -d bin src/ft/tictactoe/*.java
+
+# Run
+java -cp bin ft.tictactoe.Main
+```
+
+### Running from IDE
+1. Open the project in your preferred Java IDE
+2. Run `Main.java` as the entry point
+
+---
+
+## 🎯 OOP Concepts Applied
+
+- **Interfaces** — `IPlayer` and `IReadableTable` define contracts for players and the board
+- **Abstract Classes** — `AbstractComputerPlayer` provides shared behavior for AI players
+- **Inheritance** — All computer players extend `AbstractComputerPlayer`
+- **Encapsulation** — Board state and player data are properly encapsulated
+- **Polymorphism** — Different AI strategies share the same `IPlayer` interface
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
